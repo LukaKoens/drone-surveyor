@@ -1,29 +1,30 @@
-
-  {
+{
     "name": "drone-surveyor",
     "version": "1.0.0",
     "description": "demonstration and details of services",
     "main": "index.js",
     "scripts": {
-      "start": "react-scripts start",
-      "build": "react-scripts build",
-      "test": "react-scripts test",
-      "eject": "react-scripts eject",
-      "predeploy": "npm run build",
-      "deploy": "gh-pages -d build"
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build"
     },
     "repository": {
-      "type": "git",
-      "url": "git+https://github.com/LukaKoens/droneSurveyor.git"
+        "type": "git",
+        "url": "git+https://github.com/LukaKoens/droneSurveyor.git"
     },
     "author": "",
     "license": "ISC",
     "bugs": {
-      "url": "https://github.com/LukaKoens/droneSurveyor/issues"
+        "url": "https://github.com/LukaKoens/droneSurveyor/issues"
     },
     "homepage": "https://github.com/LukaKoens/droneSurveyor",
+    "devDependencies": {
+        "gh-pages": "^6.1.1"
+    },
     "dependencies": {
-      "gh-pages": "^6.1.1"
+        "react": "^18.3.1"
     }
-  }
-  
+}
