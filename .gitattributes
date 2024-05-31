@@ -1,0 +1,6 @@
+src/assets/honda.splat filter=lfs diff=lfs merge=lfs -text
+src/assets/PrincesSt.splat filter=lfs diff=lfs merge=lfs -text
+src/assets/DJI_0015.JPG filter=lfs diff=lfs merge=lfs -text
+src/assets/DJI_0078.JPG filter=lfs diff=lfs merge=lfs -text
+src/assets/DJI_0161.MP4 filter=lfs diff=lfs merge=lfs -text
+src/assets/DJI_0166.JPG filter=lfs diff=lfs merge=lfs -text
