@@ -1,0 +1,47 @@
+#introContainer {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+#introContainer video{
+    filter:blur(5px);
+    object-fit: cover;
+    object-position: center;
+    min-width: 102%;
+    min-height: 102%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+
+#title{
+    position: absolute;
+    width:32em;
+    top:0;
+    text-align: center;
+    margin-top: 10%;   
+    border-radius: 10em;
+    backdrop-filter: blur(10px);
+
+}
+
+#title h1 {
+    text-align: center;
+    font-size: 6em; /* Larger font size */
+    color: #222222; /* Dark text color */
+  }
+
+#title h2 {
+  margin: 0%;
+  padding: 0;
+    font-size: 0.4em; /* Medium font size */
+    color: #444444; /* Slightly lighter text color */
+  }
+  
