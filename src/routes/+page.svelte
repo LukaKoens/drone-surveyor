@@ -83,7 +83,7 @@
     left: 0;
     top: 0;
     padding: 0 auto;
-    background-image: url("background-images/introImage.JPG");
+    background-image: url("/background-images/introImage.JPG");
     background-repeat: no-repeat;
     background-size: cover;
   }

@@ -40,7 +40,6 @@
   <section class="gallery">
     <h2>Gallery</h2>
     <div class="image-grid">
-      <!-- Replace these with your actual images -->
       <img src="/general-photography/Roof.JPG" alt="Sample Photo 1"/>
       <img src="/general-photography/Slip.JPG" alt="Sample Photo 2" />
       <img src="/general-photography/BirdsEye.JPG" alt="Sample Photo 3" />
