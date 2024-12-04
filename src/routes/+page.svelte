@@ -19,61 +19,62 @@
 </script>
 
 <main>
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Drone Surveyor</h1>
-      <p>
-        Your ultimate solution for aerial surveys and high-resolution mapping.
-      </p>
-      <a href="/services" class="btn-primary">Explore Our Services</a>
-    </div>
-  </section>
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Drone Surveyor</h1>
+    <p>
+      A small, independent contractor delivering <strong>affordable</strong>, <strong>fast</strong>, and <strong>flexible</strong> drone surveying services.
+    </p>
+    <a href="/services" class="btn-primary">Explore Our Services</a>
+  </div>
+</section>
+
 
   <!-- Features Section -->
   <section class="features">
     <h2>Why Choose Us?</h2>
     <div class="feature-cards">
       <div class="feature-card">
-        <img src="/icons/precision.svg" alt="Precision Icon" />
-        <h3>Precision</h3>
+        <img src="/icons/affordable.svg" alt="Affordable Icon" />
+        <h3>Affordable</h3>
         <p>
-          Capture high-accuracy aerial data with cutting-edge drone technology.
+          Tailored solutions that fit your budget without compromising quality.
         </p>
       </div>
       <div class="feature-card">
-        <img src="/icons/speed.svg" alt="Speed Icon" />
-        <h3>Efficiency</h3>
-        <p>Fast turnaround times for surveys and project deliverables.</p>
+        <img src="/icons/fast.svg" alt="Fast Icon" />
+        <h3>Fast</h3>
+        <p>
+          Quick turnaround times to meet tight deadlines without hassle.
+        </p>
       </div>
       <div class="feature-card">
-        <img src="/icons/innovation.svg" alt="Innovation Icon" />
-        <h3>Innovation</h3>
+        <img src="/icons/flexible.svg" alt="Flexible Icon" />
+        <h3>Flexible</h3>
         <p>
-          State-of-the-art equipment and techniques for exceptional results.
+          Adaptable to your specific needs and ready to take on unique challenges.
         </p>
       </div>
     </div>
   </section>
+
 
   <!-- Navigation Cards Section -->
   <section class="navigation">
     <h2>Explore</h2>
     <div class="nav-cards">
       {#each sections as section}
-        <div class="nav-card">
-          <h3><a href={section.href}>{section.title}</a></h3>
+      <a href={section.href} class="nav-card">
+          <h3>{section.title}</h3>
           <p>{section.description}</p>
-        </div>
+      </a>
       {/each}
     </div>
   </section>
 </main>
 
 <style>
-  body {
-    padding: 0;
-  }
   /* General Styling */
   main {
     min-height: 100vh;
@@ -82,7 +83,7 @@
     left: 0;
     top: 0;
     padding: 0 auto;
-    background-image: url("introImage.JPG");
+    background-image: url("background-images/introImage.JPG");
     background-repeat: no-repeat;
     background-size: cover;
   }
@@ -97,6 +98,9 @@
   }
   .hero-content {
     max-width: 700px;
+  }
+  .hero-content strong {
+    color: white;
   }
   .hero h1 {
     font-size: 2.5rem;
@@ -127,6 +131,7 @@
   .features h2 {
     font-size: 2rem;
     margin-bottom: 2rem;
+    color: white;
   }
   .feature-cards {
     display: flex;
@@ -142,21 +147,31 @@
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
   }
+  .feature-card:hover {
+    transform: scale(1.1);
+  }
+
   .feature-card img {
-    width: 50px;
+    width: 60px;
     margin-bottom: 1rem;
+    transition: transform 0.3s;
   }
+
   .feature-card h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
   }
 
   /* Navigation Cards Section */
-  .navigation {
+    .navigation {
+    position: relative;
     padding: 4rem 1rem;
     text-align: center;
+    color: white;
   }
+  
   .nav-cards {
     display: flex;
     flex-wrap: wrap;
@@ -171,12 +186,14 @@
     padding: 1.5rem;
     border-radius: 10px;
     text-align: center;
-    transition: transform 0.3s;
+    transition: transform 0.3s, background-color 0.3s;
+    text-decoration: none; /* Remove underline */
   }
   .nav-card:hover {
     transform: translateY(-10px);
+    background-color: #0056b3;
   }
-  .nav-card h3 a {
+  .nav-card h3 {
     color: white;
     text-decoration: none;
     font-size: 1.5rem;
