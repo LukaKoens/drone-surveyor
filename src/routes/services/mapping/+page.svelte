@@ -11,7 +11,7 @@
      * @type {Map}
      */
   let map;
-  let mapExtent = [174.73217961424615,-36.81623890464144,174.73961033745633,-36.81287946841008]
+  let mapExtent = [174.720604,-36.820171,174.765264,-36.796021]
   let defaultExtent = olProj.transformExtent(mapExtent, 'EPSG:4326', 'EPSG:3857')
 
   let flightInfo = " A Compliation of Orhtomosaic's generated from flights over local parks and wetlands, I'm happy to share any of the content seen here, just get in touch to discuss."

@@ -1,7 +1,7 @@
 <script>
   // Array of portfolio images
   const images = [
-    { src: '/images/photo1.jpg', alt: 'Aerial View of a Park' },
+    { src: '/portfolio-images/pukehko.JPG', alt: 'Aerial View of a Park' },
     { src: '/images/photo2.jpg', alt: 'Construction Site' },
     { src: '/images/photo3.jpg', alt: 'Urban Planning View' },
   ];
