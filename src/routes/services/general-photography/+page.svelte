@@ -19,8 +19,14 @@
     ];
 
 
+  /**
+     * @type {string | null}
+     */
   let selectedImage = null;
 
+  /**
+     * @param {string} imageSrc
+     */
   function openModal(imageSrc) {
     selectedImage = imageSrc;
   }
