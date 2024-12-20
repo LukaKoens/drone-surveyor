@@ -32,12 +32,12 @@
     container.appendChild(renderer.domElement);
 
     // Add lights
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 3);
     scene.add(ambientLight);
 
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
-    directionalLight.position.set(5, 5, 5);
-    scene.add(directionalLight);
+    // const directionalLight = new THREE.DirectionalLight(0xffffff, 2);
+    // directionalLight.position.set(5, 50, 5);
+    // scene.add(directionalLight);
 
     // Add controls for interactive rotation, zoom, etc.
     controls = new OrbitControls(camera, renderer.domElement);
@@ -98,7 +98,8 @@
 </script>
 
 <main>
-  <div class="viewer-container" bind:this={container}></div>
+  <div class="viewer-container" bind:this={container}>  <a class="home-button" href="/">Home</a>
+  </div>
 </main>
 
 <style>
@@ -111,5 +112,30 @@
 
   canvas {
     display: block;
+  }
+    /* Home Button */
+    .home-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: background-color 0.3s;
+    text-decoration: none;
+  }
+
+  .home-button:hover {
+    background-color: #0056b3;
   }
 </style>
