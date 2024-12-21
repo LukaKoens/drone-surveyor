@@ -26,7 +26,7 @@
     <p>
       A small, independent contractor delivering <strong>affordable</strong>, <strong>fast</strong>, and <strong>flexible</strong> drone surveying services.
     </p>
-    <a href="/services" class="btn-primary">Explore Our Services</a>
+    <a href="/mapping" class="btn-primary">Explore some of Our Works</a>
   </div>
 </section>
 
@@ -35,20 +35,21 @@
   <section class="features">
     <h2>Why Choose Us?</h2>
     <div class="feature-cards">
-      <div class="feature-card">
+      <a href="/mapping-services" class="feature-card">
         <img src="/icons/affordable.svg" alt="Affordable Icon" />
-        <h3>Affordable</h3>
+        
+        <h3>Custom High Resolution Aerial Mapping</h3>
         <p>
-          Tailored solutions that fit your budget without compromising quality.
+          Tailored solutions that fit your budget, bringing real world data quickly.
         </p>
-      </div>
-      <div class="feature-card">
+      </a>
+      <a href="/3d-modeling" class="feature-card">
         <img src="/icons/fast.svg" alt="Fast Icon" />
-        <h3>Fast</h3>
+        <h3>Photogrammertry Modeling</h3>
         <p>
-          Quick turnaround times to meet tight deadlines without hassle.
+          Using specific flight techniques and modern image processing, stunning 3d models can generated of a variaty of objects and enviroments.
         </p>
-      </div>
+      </a>
       <div class="feature-card">
         <img src="/icons/flexible.svg" alt="Flexible Icon" />
         <h3>Flexible</h3>
@@ -61,17 +62,24 @@
 
 
   <!-- Navigation Cards Section -->
-  <section class="navigation">
-    <h2>Explore</h2>
-    <div class="nav-cards">
-      {#each sections as section}
-      <a href={section.href} class="nav-card">
-          <h3>{section.title}</h3>
-          <p>{section.description}</p>
-      </a>
-      {/each}
-    </div>
-  </section>
+<!-- Navigation Cards Section -->
+<section class="navigation">
+  <h2>Explore</h2>
+  <div class="nav-cards">
+    <!-- Link directly to the service page -->
+    <!-- Link directly to the portfolio page -->
+    <a href="/portfolio" class="nav-card">
+      <h3>Portfolio</h3>
+      <p>Browse our stunning drone photography and project gallery.</p>
+    </a>
+    <!-- Link directly to the contact page -->
+    <a href="/contact" class="nav-card">
+      <h3>Contact</h3>
+      <p>Get in touch with us for inquiries or to book a service.</p>
+    </a>
+  </div>
+</section>
+
 </main>
 
 <style>
@@ -148,6 +156,8 @@
     text-align: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
+    color: black;
+    text-decoration: none; /* Remove underline */
   }
   .feature-card:hover {
     transform: scale(1.1);
@@ -182,7 +192,6 @@
     flex: 1;
     max-width: 300px;
     background: #007bff;
-    color: white;
     padding: 1.5rem;
     border-radius: 10px;
     text-align: center;
