@@ -37,6 +37,7 @@
   </script>
   
   <section class="hero">
+    
     <div class="hero-content">
       <h1>General Photography</h1>
       <p>Professional drone photography to showcase your property, events, or landscapes in a way you just can't from the ground.</p>
@@ -44,7 +45,8 @@
       <a href='/contact'><button class="cta-button">Contact Us</button></a>
     </div>
   </section>
-  
+  <a class="home-button" href="/">Home</a>
+
   <section class="features">
     {#each features as feature}
       <div class="feature-card">
@@ -58,6 +60,7 @@
   <section class="gallery">
     <h2>Gallery</h2>
     <div class="image-grid">
+      
       <img
         src="/general-photography/PampasGrass.JPG"
         alt="Sample Photo 1"
@@ -139,12 +142,12 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-around;
-      gap: 20px;
-      background-color: #f8f9fa;
+      background-color: #d6ccc2;
     }
   
     .feature-card {
-      background: #fff;
+      background: #edede9;
+      
       border-radius: 8px;
       padding: 20px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -250,6 +253,31 @@
 
   .close-btn:hover {
     background: #f0f0f0;
+  }
+
+  .home-button {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: background-color 0.3s;
+    text-decoration: none;
+  }
+
+  .home-button:hover {
+    background-color: #0056b3;
   }
   </style>
   

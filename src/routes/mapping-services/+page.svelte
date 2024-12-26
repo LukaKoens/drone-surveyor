@@ -26,6 +26,8 @@
     </div>
 
   </section>
+  <a class="home-button" href="/">Home</a>
+
 </main>
 
 <style>
@@ -35,18 +37,15 @@
     left:0;
     width: 100vw;
     height: 100vh;
-    background-image: url("/general-photography/Mapping_Background.JPG");
+    background-image: url("/background-images/Mapping_Background.JPG");
     margin: 0;
   }
   /* Hero Section */
   .hero {
     text-align: center;
     padding: 3rem 1rem;
-    background: linear-gradient(135deg, rgb(87 90 75), rgb(42 44 36));
-    opacity: 0.8;
-    z-index: 1;
     border-radius: 0 0 15px 15px;
-    background: linear-gradient(135deg, rgb(87 90 75), rgb(42 44 36));
+    background: linear-gradient(135deg, rgb(96, 108, 56), rgb(40, 54, 24));
     opacity: 0.95;
     z-index: 1;
     color: white;
@@ -76,7 +75,7 @@
   }
 
   .service-card {
-    background: white;
+    background: rgb(254, 250, 224);
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 2rem;
@@ -104,20 +103,46 @@
     text-decoration: none;
     font-weight: bold;
     color: white;
-    background-color: #007bff;
+    background-color: #283618;
     padding: 0.7rem 1.5rem;
     border-radius: 25px;
     transition: background-color 0.3s;
   }
 
   .service-card .learn-more:hover {
-    background-color: #0056b3;
+    background-color: #606C38;
   }
 
   .service-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
   }
+    /* Home Button */
+    .home-button {
+    position: absolute;
+    top: 3rem;
+    left: 3rem;
+    background: #283618;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: background-color 0.3s;
+    text-decoration: none;
+  }
+
+  .home-button:hover {
+    background-color: #606C38;
+  }
+
 
   /* Responsive Design */
   @media (max-width: 768px) {

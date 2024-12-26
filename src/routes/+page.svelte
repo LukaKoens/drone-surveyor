@@ -35,28 +35,24 @@
   <section class="features">
     <h2>Why Choose Us?</h2>
     <div class="feature-cards">
-      <a href="/mapping-services" class="feature-card">
-        <img src="/icons/affordable.svg" alt="Affordable Icon" />
-        
-        <h3>Custom High Resolution Aerial Mapping</h3>
+      <a href="/mapping-services" class="feature-card">        
+        <h3>Aerial Mapping</h3>
         <p>
           Tailored solutions that fit your budget, bringing real world data quickly.
         </p>
       </a>
       <a href="/3d-modeling" class="feature-card">
-        <img src="/icons/fast.svg" alt="Fast Icon" />
         <h3>Photogrammertry Modeling</h3>
         <p>
           Using specific flight techniques and modern image processing, stunning 3d models can generated of a variaty of objects and enviroments.
         </p>
       </a>
-      <div class="feature-card">
-        <img src="/icons/flexible.svg" alt="Flexible Icon" />
-        <h3>Flexible</h3>
+      <a href="/general-photography" class="feature-card">
+        <h3>General Photography</h3>
         <p>
-          Adaptable to your specific needs and ready to take on unique challenges.
+          Capture stunning aerial views with high-quality, flexible drone photography for any project or occasion.
         </p>
-      </div>
+      </a>
     </div>
   </section>
 
@@ -64,14 +60,7 @@
   <!-- Navigation Cards Section -->
 <!-- Navigation Cards Section -->
 <section class="navigation">
-  <h2>Explore</h2>
   <div class="nav-cards">
-    <!-- Link directly to the service page -->
-    <!-- Link directly to the portfolio page -->
-    <a href="/portfolio" class="nav-card">
-      <h3>Portfolio</h3>
-      <p>Browse our stunning drone photography and project gallery.</p>
-    </a>
     <!-- Link directly to the contact page -->
     <a href="/contact" class="nav-card">
       <h3>Contact</h3>
@@ -195,6 +184,7 @@
     padding: 1.5rem;
     border-radius: 10px;
     text-align: center;
+    color: white;
     transition: transform 0.3s, background-color 0.3s;
     text-decoration: none; /* Remove underline */
   }
