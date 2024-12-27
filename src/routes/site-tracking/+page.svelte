@@ -1,12 +1,9 @@
 <script>
     import { onMount } from "svelte";
     import "ol/ol.css";
-    import { Map, Tile, View } from "ol";
-    import * as olProj from "ol/proj";
+    import { Map, View } from "ol";
     import TileLayer from "ol/layer/Tile";
-    import ImageLayer from "ol/layer/Image";
     import OSM from "ol/source/OSM";
-    import Static from "ol/source/ImageStatic";
     import { XYZ } from "ol/source";
 
     /**
@@ -15,6 +12,8 @@
     let map;
     let beforeLayer, afterLayer;
     let sliderValue = 50; // Default slider value for opacity
+    let mapWidth; // Map width in pixels
+
     // {
     //   name: 'Mountain Survey',
     //   center: olProj.fromLonLat([174.750, -36.830]),
@@ -31,37 +30,74 @@
                 }),
 
                 // GeoTIFF Layer or Custom Tiles
-                beforeLayer = new TileLayer({
+                (beforeLayer = new TileLayer({
                     source: new XYZ({
                         url: "/site-tracking/before_tiles/{z}/{x}/{-y}.png",
                         wrapX: true,
                     }),
-                }),
+                })),
 
-                afterLayer = new TileLayer({
+                (afterLayer = new TileLayer({
                     source: new XYZ({
                         url: "/site-tracking/after_tiles/{z}/{x}/{-y}.png",
                         wrapX: true,
                     }),
-                    opacity: sliderValue / 100, // Initialize opacity
-                }),
+                })),
             ],
             view: new View({
                 center: [19451683.86, -4413250.92], // Use appropriate coordinates
                 zoom: 22,
             }),
         });
+        // Add the clip bar
+        const clipBar = document.createElement("div");
+        clipBar.className = "clip-bar";
+        document.getElementById("map").appendChild(clipBar);
+        mapWidth = document.getElementById("map")?.clientWidth
+        console.log(mapWidth)
+
+
         const slider = document.getElementById("slider");
-        slider.addEventListener("input", (event) => {
-            afterLayer.setOpacity(event.target.value / 100);
-        });
+
+        const updateClip = (event) => {
+            const value = event.target.value; // Slider value (0 to 100)
+            const clipX = (value/100) * mapWidth;
+
+            clipBar.style.left = `${clipX}px`;
+
+            afterLayer.on("prerender", (evt) => {
+                const context = evt.context;
+                const width = context.canvas.width;
+                const height = context.canvas.height;
+
+
+                context.restore();
+                context.save();
+                context.beginPath();
+                context.rect(clipX, 0, width , height);
+                context.clip();
+            });
+
+            afterLayer.on("postrender", (evt) => {
+                evt.context.restore();
+            });
+
+            map.render(); // Trigger a re-render to apply changes
+        };
+
+        slider.addEventListener("input", updateClip);
     });
 </script>
 
 <div id="map">
-    <div class="overlay"></div>
-
-    <input id="slider" type="range" min="0" max="100" value="50" on:input="{(e) => (sliderValue = e.target.value)}" />
+    <div class="clip-bar" style="left: {(sliderValue/100)*mapWidth}px"></div>
+    <input
+        id="slider"
+        type="range"
+        min="0"
+        max="100"
+        bind:value={sliderValue}
+    />
     <!-- Home Button -->
     <a class="home-button" href="/">Home</a>
 </div>
@@ -85,12 +121,18 @@
     }
 
     #slider {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .clip-bar {
         position: absolute;
-        top: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 1000;
-        width: 300px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background-color: red;
+        z-index: 10;
+        pointer-events: none;
     }
 
     /* Home Button */
