@@ -14,27 +14,7 @@
   let mapExtent = [174.720604,-36.820171,174.765264,-36.796021]
   let defaultExtent = olProj.transformExtent(mapExtent, 'EPSG:4326', 'EPSG:3857')
 
-  let flightInfo = " A Compliation of Orhtomosaic's generated from flights over local parks and wetlands. If your interested in any of the content seen here, just get in touch to discuss."
 
-  const locations = [
-    {
-      name: 'Le Roys Bush',
-      center: [19451604.13,-4413351.34], // Longitude, Latitude
-      zoom: 18,
-      description: "Taken over the course of 2 days, this captures the Wetland enviroment at Le Roys Bush and allows for a easy overview of the state of the wetland in areas that are difficult to accesss on foot."
-    },
-    {
-      name: 'Te Kopua-o-Matakamokamo ',
-      center: [19453514.3,-4411546.9],
-      zoom: 18,
-      description: "This capture took muiltple flights over the course of a week, and was a great area to develop my approach towards planning and executing larger mapping flights. The top down view of the mangroves gives a whole new glance into the complexity that isn't visible from ground level."
-    },
-    // {
-    //   name: 'Mountain Survey',
-    //   center: olProj.fromLonLat([174.750, -36.830]),
-    //   zoom: 15,
-    // },
-  ];
 
   onMount(() => {
     map = new Map({
@@ -63,19 +43,11 @@
       ],
       view: new View({
         center: [19451604.13,-4413351.34], // Use appropriate coordinates
-        zoom: 15,
+        zoom: 18,
         
       }),
     });
   });
-  const jumpToLocation = (/** @type {{ name?: string; center: any; zoom: any; description: string; }} */ location) => {
-    map.getView().animate({
-      center: location.center,
-      zoom: location.zoom,
-      duration: 1000, // Smooth animation duration in milliseconds
-    });
-    flightInfo = location.description;
-  };
 </script>
 
 <style>
@@ -159,15 +131,6 @@
 </style>
 
 <div id="map">
-  <div class="overlay">
-    <h3>Select a Region</h3>
-    <div class="location-buttons">
-      {#each locations as location}
-        <button on:click={() => jumpToLocation(location)}>{location.name}</button>
-      {/each}
-    </div>
-    <div class="flight-info">{flightInfo}</div>
-  </div>
 
     <!-- Home Button -->
     <a class="home-button" href="/">Home</a>

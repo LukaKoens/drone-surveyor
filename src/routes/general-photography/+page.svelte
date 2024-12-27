@@ -40,16 +40,9 @@
 
 <section class="hero">
   <div class="hero-content">
-    <h1>General Photography</h1>
-    <p>
-      Professional drone photography to showcase your property, events, or
-      landscapes in a way you just can't from the ground.
-    </p>
-    <p>
-      Getting a Different perspective on a problem can offer invaluable insights
-      and save time and money in planning and perperation when approaching
-      difficult problems
-    </p>
+    <h3>
+      Photography you just can't get from the ground.
+    </h3>
     <a href="/contact"><button class="cta-button">Contact Us</button></a>
   </div>
 </section>
@@ -70,12 +63,12 @@
   <div class="image-grid">
     <img
       src="/general-photography/above_everything.JPG"
-      alt="Sample Photo 2"
+      alt="Sample Photo 1"
       on:click={() => openModal("/general-photography/above_everything.JPG")}
     />
     <img
       src="/general-photography/tough_spots.JPG"
-      alt="Sample Photo 1"
+      alt="Sample Photo 2"
       on:click={() => openModal("/general-photography/tough_spots.JPG")}
     />
     <img
@@ -85,13 +78,13 @@
     />
     <img
       src="/general-photography/top_down.JPG"
-      alt="Sample Photo 3"
+      alt="Sample Photo 4"
       on:click={() => openModal("/general-photography/top_down.JPG")}
     />
     <img
-      src="/general-photography/GlamorShot.JPG"
-      alt="Sample Photo 4"
-      on:click={() => openModal("/general-photography/GlamorShot.JPG")}
+      src="/general-photography/sumit.JPG"
+      alt="Sample Photo 5"
+      on:click={() => openModal("/general-photography/sumit.JPG")}
     />
   </div>
 
@@ -128,12 +121,13 @@
     z-index: 1;
     background-color: rgba(0, 0, 0, 0.5); /* For contrast */
     backdrop-filter: blur(5px);
+    font-family: sans-serif;
     padding: 20px 40px;
     border-radius: 8px;
   }
 
   .cta-button {
-    margin-top: 2em;
+    margin-top: 1em;
     padding: 0.5em 1em;
     background-color: #007bff;
     color: #fff;
