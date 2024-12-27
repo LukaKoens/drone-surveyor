@@ -34,11 +34,6 @@
     <a class="home-button" href="/">Home</a>
 
     <div class="contact-container">
-      <h1>Contact Us</h1>
-      <p>
-        Have questions? Interested in our services? Drop us a message below, and
-        we’ll get back to you as soon as possible.
-      </p>
 
       <form class="contact-form" on:submit|preventDefault={sendEmail}>
         <label for="name">Your Name</label>
@@ -87,12 +82,12 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-image: url("/background-images/GlamorShot.JPG");
+    background-image: url("/background-images/contact_page.JPG");
     margin: 0;
   }
 
   .contact-section {
-    padding-top: 10vh;
+    padding-top: 20vh;
     text-align: center;
   }
 
@@ -100,9 +95,10 @@
     max-width: 800px;
     margin: 0 auto;
     background: #fff;
-    padding: 30px 40px;
+    padding: 20px 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255,255,255,0.6);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   }
 
   h1 {

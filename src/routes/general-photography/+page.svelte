@@ -102,7 +102,7 @@
       height: 50vh;
       top:-1em;
       left:-1vw;
-      background: url('/general-photography/BackgroundPhoto.JPG') no-repeat;
+      background: url('/background-images/photography_page.JPG') no-repeat;
       background-size: cover;
       background-position: center right;
       display: flex;

@@ -46,7 +46,7 @@
     // Load the materials first using MTLLoader
     const mtlLoader = new MTLLoader();
     mtlLoader.load(
-      '/3d_model/LeRoysBush_WeedingSite_1.mtl', // Path to your MTL file
+      '/3d_model/Merged_Image_Capture.mtl', // Path to your MTL file
       (materials) => {
         materials.preload(); // Preload the materials
 
@@ -54,7 +54,7 @@
         const objLoader = new OBJLoader();
         objLoader.setMaterials(materials); // Apply materials to the OBJ model
         objLoader.load(
-          '/3d_model/LeRoysBush_WeedingSite_1.obj', // Path to your OBJ file
+          '/3d_model/Merged_Image_Capture.obj', // Path to your OBJ file
           (object) => {
             scene.add(object);
           },
