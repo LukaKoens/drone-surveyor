@@ -26,14 +26,13 @@
     <p>
       A small, independent contractor delivering <strong>affordable</strong>, <strong>fast</strong>, and <strong>flexible</strong> drone surveying services.
     </p>
-    <a href="/mapping" class="btn-primary">Explore some of Our Works</a>
+    <a href="/mapping-services" class="btn-primary">Explore some of Our Work</a>
   </div>
 </section>
 
 
   <!-- Features Section -->
   <section class="features">
-    <h2>Why Choose Us?</h2>
     <div class="feature-cards">
       <a href="/mapping-services" class="feature-card">        
         <h3>Aerial Mapping</h3>
@@ -44,7 +43,7 @@
       <a href="/3d-modeling" class="feature-card">
         <h3>Photogrammertry Modeling</h3>
         <p>
-          Using specific flight techniques and modern image processing, stunning 3d models can generated of a variaty of objects and enviroments.
+          Stunning 3d models can generated of a variaty of objects and enviroments using a number of cutting edge techniques.
         </p>
       </a>
       <a href="/general-photography" class="feature-card">
@@ -92,6 +91,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    
   }
   .hero-content {
     max-width: 700px;
@@ -115,6 +115,8 @@
     font-weight: bold;
     border-radius: 5px;
     transition: background-color 0.3s;
+    box-shadow: 5px 3px 5px rgba(0, 0, 0, 0.2);
+
   }
   .btn-primary:hover {
     background-color: #0056b3;

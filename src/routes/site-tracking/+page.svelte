@@ -4,39 +4,37 @@
     import { Map, View } from "ol";
     import TileLayer from "ol/layer/Tile";
     import OSM from "ol/source/OSM";
-    import { XYZ } from "ol/source";
+    import XYZ from "ol/source/XYZ";
+    import {getRenderPixel} from 'ol/render.js';
 
-    /**
-     * @type {Map}
-     */
     let map;
     let beforeLayer, afterLayer;
-    let sliderValue = 50; // Default slider value for opacity
-    let mapWidth; // Map width in pixels
+    let isDragging = false;
+    let dragX = 0; // Position of the cut line in pixels
+    let mapWidth = 0;
 
-    // {
-    //   name: 'Mountain Survey',
-    //   center: olProj.fromLonLat([174.750, -36.830]),
-    //   zoom: 15,
-    // },
+    let left = 100;
+
+    let moving = false;
+
+    // 	$: console.log(moving);
 
     onMount(() => {
+        const mapElement = document.getElementById("map");
+
+        // Initialize the map
         map = new Map({
-            target: "map", // The div ID where the map will render
+            target: "map",
             layers: [
-                // Base Layer: OpenStreetMap
                 new TileLayer({
                     source: new OSM(),
                 }),
-
-                // GeoTIFF Layer or Custom Tiles
                 (beforeLayer = new TileLayer({
                     source: new XYZ({
                         url: "/site-tracking/before_tiles/{z}/{x}/{-y}.png",
                         wrapX: true,
                     }),
                 })),
-
                 (afterLayer = new TileLayer({
                     source: new XYZ({
                         url: "/site-tracking/after_tiles/{z}/{x}/{-y}.png",
@@ -45,36 +43,53 @@
                 })),
             ],
             view: new View({
-                center: [19451683.86, -4413250.92], // Use appropriate coordinates
+                center: [19451683.86, -4413250.92],
                 zoom: 22,
             }),
         });
-        // Add the clip bar
-        const clipBar = document.createElement("div");
-        clipBar.className = "clip-bar";
-        document.getElementById("map").appendChild(clipBar);
-        mapWidth = document.getElementById("map")?.clientWidth
-        console.log(mapWidth)
 
+        // Get the width of the map container
+        mapWidth = mapElement.clientWidth;
+        const rect = mapElement.getBoundingClientRect();
 
-        const slider = document.getElementById("slider");
+        let clipX = mapWidth / 2; // Start the button at the center
 
-        const updateClip = (event) => {
-            const value = event.target.value; // Slider value (0 to 100)
-            const clipX = (value/100) * mapWidth;
+        const dragbutton = document.getElementById("draggable");
+        dragbutton?.addEventListener("mousedown", () => {
+            moving = true;
+        });
 
-            clipBar.style.left = `${clipX}px`;
+        document.addEventListener("mousemove", (e) => {
+            if (moving) {
+                console.log(left);
+                left += e.movementX;
+                if (left <= 0) {
+                    left = 0;
+                } else if (left >= mapWidth - 10) {
+                    left = mapWidth - 10;
+                }
+            }
+            clipX = left - rect.left;
 
             afterLayer.on("prerender", (evt) => {
                 const context = evt.context;
-                const width = context.canvas.width;
-                const height = context.canvas.height;
+                const mapSize = map.getSize();
 
+                const width =left;
+                const height = context.canvas.height;
+                const tl = getRenderPixel(evt, [width, 0]);
+                const tr = getRenderPixel(evt, [mapSize[0], 0]);
+                const bl = getRenderPixel(evt, [width, mapSize[1]]);
+                const br = getRenderPixel(evt, mapSize);
 
                 context.restore();
                 context.save();
                 context.beginPath();
-                context.rect(clipX, 0, width , height);
+                context.moveTo(tl[0], tl[1]);
+                context.lineTo(bl[0], bl[1]);
+                context.lineTo(br[0], br[1]);
+                context.lineTo(tr[0], tr[1]);
+                context.closePath();
                 context.clip();
             });
 
@@ -82,24 +97,18 @@
                 evt.context.restore();
             });
 
-            map.render(); // Trigger a re-render to apply changes
-        };
-
-        slider.addEventListener("input", updateClip);
+            map.render();
+        });
+        document.addEventListener("mouseup", () => {
+            moving = false;
+        });
+        // Add the drag button
     });
 </script>
+<a class="home-button" href="/">Home</a>
 
 <div id="map">
-    <div class="clip-bar" style="left: {(sliderValue/100)*mapWidth}px"></div>
-    <input
-        id="slider"
-        type="range"
-        min="0"
-        max="100"
-        bind:value={sliderValue}
-    />
-    <!-- Home Button -->
-    <a class="home-button" href="/">Home</a>
+    <div style="left: {left}px" id="draggable"></div>
 </div>
 
 <style>
@@ -108,56 +117,40 @@
         height: 100vh;
         position: relative;
     }
-    .overlay {
+
+    #draggable {
+        width: 10px;
+        height: 100%;
+        user-select: none;
+        /* cursor: move; */
+        cursor: ew-resize;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+        background-color: gray;
         position: absolute;
-        top: 10px;
-        left: 10px;
-        background: rgba(255, 255, 255, 0.9);
-        padding: 1rem;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         z-index: 1000;
-        max-width: 500px;
     }
-
-    #slider {
-        width: 100%;
-        margin-top: 10px;
-    }
-
-    .clip-bar {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 2px;
-        background-color: red;
-        z-index: 10;
-        pointer-events: none;
-    }
-
-    /* Home Button */
     .home-button {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        background: #007bff;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        padding: 0.5em;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        font-size: 1.2rem;
-        font-weight: bold;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        z-index: 1000;
-        transition: background-color 0.3s;
-        text-decoration: none;
-    }
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: background-color 0.3s;
+    text-decoration: none;
+  }
 
-    .home-button:hover {
-        background-color: #0056b3;
-    }
+  .home-button:hover {
+    background-color: #0056b3;
+  }
 </style>

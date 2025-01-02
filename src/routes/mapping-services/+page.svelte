@@ -14,7 +14,7 @@
       <p>
         Transform your perspective with large-area drone mapping! delivering high-resolution, detailed maps for your properties, farms, or construction sites, this can help you save time, reduce costs, and make informed decisions with accurate, up to date data.
       </p>
-      <a href="/mapping" class="learn-more">Learn More</a>
+      <a href="/mapping" class="learn-more">Explore</a>
     </div>
 
     <div class="service-card">
@@ -22,7 +22,7 @@
       <p>
         Highlight progress with before-and-after drone mapping! Perfect for small areas, our detailed follow-up maps showcase transformations over time, ideal for cleanups, restorations, or project milestones.
       </p>
-      <a href="/site-tracking" class="learn-more">Learn More</a>
+      <a href="/site-tracking" class="learn-more">Explore</a>
     </div>
 
   </section>

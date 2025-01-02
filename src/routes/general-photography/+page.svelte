@@ -5,19 +5,16 @@
       title: "High-Resolution Imagery",
       description:
         "Capture stunning aerial shots in crisp, high-definition quality.",
-      icon: "📸",
     },
     {
       title: "Versatile Angles",
       description:
         "From wide landscapes to detailed close-ups, get the perfect shot.",
-      icon: "📐",
     },
     {
       title: "Customizable Packages",
       description:
         "Tailor your photography needs with flexible pricing and options.",
-      icon: "📦",
     },
   ];
 
@@ -51,7 +48,6 @@
 <section class="features">
   {#each features as feature}
     <div class="feature-card">
-      <div class="icon">{feature.icon}</div>
       <h2>{feature.title}</h2>
       <p>{feature.description}</p>
     </div>
@@ -162,10 +158,6 @@
     max-width: 300px;
   }
 
-  .feature-card .icon {
-    font-size: 2rem;
-    margin-bottom: 10px;
-  }
 
   .feature-card h2 {
     font-size: 1.25rem;
