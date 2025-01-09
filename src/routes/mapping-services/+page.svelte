@@ -5,13 +5,13 @@
 <main>
   <section class="hero">
     <h1>Mapping Services</h1>
-    <p>Explore the cutting-edge drone solutions we offer to elevate your projects.</p>
+    <p>Explore whats possible with Drones to elevate your projects.</p>
   </section>
 
   <section class="services">
     <div class="service-card">
       <h2>Large Area Mapping</h2>
-      <p>
+      <p class='desc'>
         Transform your perspective with large-area drone mapping! delivering high-resolution, detailed maps for your properties, farms, or construction sites, this can help you save time, reduce costs, and make informed decisions with accurate, up to date data.
       </p>
       <a href="/mapping" class="learn-more">Explore</a>
@@ -19,7 +19,7 @@
 
     <div class="service-card">
       <h2>Temporal Mapping</h2>
-      <p>
+      <p class='desc'>
         Highlight progress with before-and-after drone mapping! Perfect for small areas, our detailed follow-up maps showcase transformations over time, ideal for cleanups, restorations, or project milestones.
       </p>
       <a href="/site-tracking" class="learn-more">Explore</a>
@@ -146,13 +146,31 @@
 
   /* Responsive Design */
   @media (max-width: 768px) {
+
+    main{
+      background-position:-600px -1200px;
+    }
+
+    .desc{
+      display: none;
+    }
+
+    .home-button{
+      top:1rem;
+      left:1rem;
+    }
+
     .services {
       flex-direction: column;
       align-items: center;
     }
 
     .service-card {
+      padding:1rem;
       max-width: 100%;
+    }
+    .service-card h2{
+      padding-bottom: 10px;
     }
   }
 </style>

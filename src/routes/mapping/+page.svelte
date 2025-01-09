@@ -34,12 +34,6 @@
           }),
           extent:defaultExtent
         }),
-        new TileLayer({
-                    source: new XYZ({
-                        url: "/site-tracking/after_tiles/{z}/{x}/{-y}.png",
-                        wrapX: true,
-                    }),
-        }),
       ],
       view: new View({
         center: [19451604.13,-4413351.34], // Use appropriate coordinates
