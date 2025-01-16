@@ -17,13 +17,13 @@
       <a href="/mapping" class="learn-more">Explore</a>
     </div>
 
-    <div class="service-card">
+    <!-- <div class="service-card">
       <h2>Temporal Mapping</h2>
       <p class='desc'>
         Highlight progress with before-and-after drone mapping! Perfect for small areas, our detailed follow-up maps showcase transformations over time, ideal for cleanups, restorations, or project milestones.
       </p>
       <a href="/site-tracking" class="learn-more">Explore</a>
-    </div>
+    </div> -->
 
   </section>
   <a class="home-button" href="/">Home</a>
