@@ -5,9 +5,9 @@
 
         <div class="contact-card">
             <p><strong>Name:</strong> Luka Koens</p>
-            <p><strong>Email:</strong> <a href="mailto:luka.koens@gmail.com">luka.koens@gmail.com</a></p>
+            <p><strong>Email:</strong> <a href="mailto:luka@dronesurveyor.co.nz">luka@dronesurveyor.co.nz</a></p>
             <p><strong>Location:</strong> Auckland, New Zealand</p>
-            <p><strong>Availability:</strong> Open to contract or collaborative projects</p>
+            <p><strong>Availability:</strong> Open to contract,collaborative projects or otherwise happy to discuse</p>
         </div>
     </div>
 </section>

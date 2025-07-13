@@ -1,4 +1,9 @@
 <script>
+    import {
+        ArrowLeft,
+    } from "lucide-svelte";
+
+
   import { onMount } from 'svelte';
   // @ts-ignore
   import * as THREE from 'three';
@@ -91,7 +96,7 @@
         <div class="loading-bar" style="width: {loadingProgress}%"></div>
       </div>
     {/if}
-    <a class="home-button" href="/UAV">Back</a>
+    <a class="home-btn" href="/UAV"><ArrowLeft></ArrowLeft></a>
   </div>
 </main>
 
@@ -120,30 +125,34 @@
     display: block;
   }
 
-  .home-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 0.5em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    font-size: 1.2rem;
-    font-weight: bold;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    transition: background-color 0.3s;
-    text-decoration: none;
-  }
+    /* === NAVIGATION === */
+    .home-btn {
+        position: absolute;
+        top: 2rem;
+        left: 2rem;
+        background: rgba(15, 15, 15, 0.9);
+        backdrop-filter: blur(20px);
+        color: #ffffff;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 50px;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        text-decoration: none;
+        z-index: 10;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
 
-  .home-button:hover {
-    background-color: #0056b3;
-  }
+    .home-btn:hover {
+        background: rgba(100, 181, 246, 0.15);
+        border-color: rgba(100, 181, 246, 0.5);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(100, 181, 246, 0.2);
+    }
 
   .loading-bar-wrapper {
     position: absolute;

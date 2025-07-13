@@ -410,7 +410,6 @@
         padding: 2rem;
         border-radius: 15px;
         border: 1px solid rgba(255, 255, 255, 0.1);
-        min-width: 300px;
     }
 
     .method-block h3 {
