@@ -1,206 +1,272 @@
 <script>
-  let sections = [
-    {
-      title: "Services",
-      href: "/services",
-      description: "Discover what we offer for your drone surveying needs.",
-    },
-    {
-      title: "Portfolio",
-      href: "/portfolio",
-      description: "Browse our stunning drone photography and project gallery.",
-    },
-    {
-      title: "Contact",
-      href: "/contact",
-      description: "Get in touch with us for inquiries or to book a service.",
-    },
-  ];
+    import { Drone, Map, Eye, Mail, Phone, MapPin, Linkedin, Github } from 'lucide-svelte';
+    import Contact from '$lib/components/Contact.svelte'
+ 
+    
+    let tiles = [
+        {
+            icon: Drone,
+            title: 'Drone Data Collection & Communication',
+            description: 'UAV aerial mapping, surveying, and data collection with CAA compliant flight planning and execution.',
+            link: '/UAV'
+        },
+        {
+            icon: Map,
+            title: 'Geospatial Analysis & Solutions',
+            description: 'Utilizing GIS software such as the Esri ecosystem, QGIS and python approachs to turn underlying data into interactive and informative products and solutions',
+            link: '/GIS'
+        },
+        {
+            icon: Eye,
+            title: 'Computer Vison & LLM development',
+            description: "AI implementation and development services focused on computer vision and language models, helping you choose the right tools for your specific needs.",
+            link: '/AI'
+        }
+    ]
 </script>
 
-<main>
-<!-- Hero Section -->
-<section class="hero">
-  <div class="hero-content">
-    <h1>Drone Surveyor</h1>
-    <p>
-      A small, independent contractor delivering <strong>affordable</strong>, <strong>fast</strong>, and <strong>flexible</strong> drone surveying services.
-    </p>
-    <a href="/mapping-services" class="btn-primary">Explore some of Our Work</a>
-  </div>
-</section>
 
+<svelte:head>
+    <title>Luka Koens - Developer Portfolio</title>
+    <meta name="description" content="Geospatial Analysis, Drone Operation, Computer Vision Development" />
+</svelte:head>
 
-  <!-- Features Section -->
-  <section class="features">
-    <div class="feature-cards">
-      <a href="/mapping-services" class="feature-card">        
-        <h3>Aerial Mapping</h3>
-        <p>
-          Tailored solutions that fit your budget, bringing real world data quickly.
-        </p>
-      </a>
-      <a href="/3d-modeling" class="feature-card">
-        <h3>Photogrammertry Modeling</h3>
-        <p>
-          Stunning 3d models can generated of a variaty of objects and enviroments using a number of cutting edge techniques.
-        </p>
-      </a>
-      <a href="/general-photography" class="feature-card">
-        <h3>General Photography</h3>
-        <p>
-          Capture stunning aerial views with high-quality, flexible drone photography for any project or occasion.
-        </p>
-      </a>
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Curriculum Vitae Luka Koens</h1>
+            <p>Geospatial Analysis, Drone Operation,<br> Computer Vision Development</p>
+        </div>
+        
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
     </div>
-  </section>
 
+    <div class="navigation-section">
+        <div class="nav-container">
+            <h2 class="section-title">Explore My Portfolio</h2>
+            
+            <div class="nav-grid">
+                {#each tiles as tile}
+                    <a href={tile.link} class="nav-tile">
+                        <span class="tile-icon">
+                            <svelte:component this={tile.icon} size={48} />
+                        </span>
+                        <h3 class="tile-title">{tile.title}</h3>
+                        <p class="tile-description">{tile.description}</p>
+                    </a>
+                {/each}
+            </div>
+        </div>
+    </div>
 
-  <!-- Navigation Cards Section -->
-<!-- Navigation Cards Section -->
-<section class="navigation">
-  <div class="nav-cards">
-    <!-- Link directly to the contact page -->
-    <a href="/contact" class="nav-card">
-      <h3>Contact</h3>
-      <p>Get in touch with us for inquiries or to book a service.</p>
-    </a>
-  </div>
-</section>
-
-</main>
+    <Contact></Contact>
+</body>
 
 <style>
-  /* General Styling */
-  main {
-    min-height: 100vh;
-    width: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    padding: 0 auto;
-    background-image: url("/background-images/introImage.JPG");
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  /* Hero Section */
-  .hero {
-    color: white;
-    text-align: center;
-    padding: 5rem 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background: #0a0a0a;
+        color: #ffffff;
+        overflow-x: hidden;
+    }
+
+ /* Hero Section */
+    .hero {
+        height: 100vh;
+        background-image: url('/intro_bg.JPG');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        padding: 2rem;
+        max-width: 800px;
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.8rem, 6vw, 4.5rem);
+        font-weight: 800;
+        margin-bottom: 1.2rem;
+        color: #ffffff;
+        letter-spacing: -0.02em;
+        line-height: 1.1;
+        text-shadow: 
+            0 2px 10px rgba(0, 0, 0, 0.8),
+            0 0 20px rgba(0, 0, 0, 0.6),
+            0 0 40px rgba(0, 0, 0, 0.4);
+        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+    }
+
+    .hero p {
+        font-size: clamp(1.2rem, 2.5vw, 1.4rem);
+        margin-bottom: 2.5rem;
+        color: #f8f8f8;
+        font-weight: 400;
+        line-height: 1.6;
+        letter-spacing: 0.01em;
+        text-shadow: 
+            0 2px 8px rgba(0, 0, 0, 0.7),
+            0 0 15px rgba(0, 0, 0, 0.5);
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    }
+
+    .scroll-indicator {
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 3;
+        animation: bounce 2s infinite;
+        filter: drop-shadow(1em 10px 10px rgba(0, 0, 0, 0.7));
+    }
+
+    .scroll-arrow {
+        width: 24px;
+        height: 24px;
+        border-right: 4px solid rgba(255, 255, 255, 0.7);
+        border-bottom: 4px solid rgba(255, 255, 255, 0.7);
+        transform: rotate(45deg);
+    }
+
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translateX(-50%) translateY(0);
+        }
+        40% {
+            transform: translateX(-50%) translateY(-10px);
+        }
+        60% {
+            transform: translateX(-50%) translateY(-5px);
+        }
+    }
     
-  }
-  .hero-content {
-    max-width: 700px;
-  }
-  .hero-content strong {
-    color: white;
-  }
-  .hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-  }
-  .hero p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-  }
-  .btn-primary {
-    padding: 0.75rem 1.5rem;
-    background-color: #007bff;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-    box-shadow: 5px 3px 5px rgba(0, 0, 0, 0.2);
+    .navigation-section {
+        padding: 5rem 2rem;
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-  }
-  .btn-primary:hover {
-    background-color: #0056b3;
-  }
+    .nav-container {
+        max-width: 1200px;
+        width: 100%;
+    }
 
-  /* Features Section */
-  .features {
-    text-align: center;
-    padding: 4rem 1rem;
-  }
-  .features h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    color: white;
-  }
-  .feature-cards {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-  .feature-card {
-    flex: 1;
-    max-width: 300px;
-    background: #f9f9f9;
-    padding: 1.5rem;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-    color: black;
-    text-decoration: none; /* Remove underline */
-  }
-  .feature-card:hover {
-    transform: scale(1.1);
-  }
+    .section-title {
+        text-align: center;
+        font-size: clamp(2rem, 5vw, 3rem);
+        font-weight: 600;
+        margin-bottom: 3rem;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
 
-  .feature-card img {
-    width: 60px;
-    margin-bottom: 1rem;
-    transition: transform 0.3s;
-  }
+    .nav-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+    }
 
-  .feature-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-  }
+    .nav-tile {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        padding: 2.5rem;
+        text-decoration: none;
+        color: inherit;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+    }
 
-  /* Navigation Cards Section */
-    .navigation {
-    position: relative;
-    padding: 4rem 1rem;
-    text-align: center;
-    color: white;
-  }
-  
-  .nav-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-  }
-  .nav-card {
-    flex: 1;
-    max-width: 300px;
-    background: #007bff;
-    padding: 1.5rem;
-    border-radius: 10px;
-    text-align: center;
-    color: white;
-    transition: transform 0.3s, background-color 0.3s;
-    text-decoration: none; /* Remove underline */
-  }
-  .nav-card:hover {
-    transform: translateY(-10px);
-    background-color: #0056b3;
-  }
-  .nav-card h3 {
-    color: white;
-    text-decoration: none;
-    font-size: 1.5rem;
-  }
-  .nav-card p {
-    margin-top: 0.5rem;
-    font-size: 1rem;
-  }
+    .nav-tile::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+        transition: left 0.5s;
+    }
+
+    .nav-tile:hover::before {
+        left: 100%;
+    }
+
+    .nav-tile:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .tile-icon {
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+        display: block;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .tile-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: #ffffff;
+    }
+
+    .tile-description {
+        color: #b0b0b0;
+        line-height: 1.6;
+        font-size: 0.95rem;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(60px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .nav-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        
+        .nav-tile {
+            padding: 2rem;
+        }
+    }
 </style>
