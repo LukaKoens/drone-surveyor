@@ -1,5 +1,5 @@
 <script>
-    import { Map, Activity, Satellite, Globe, Home} from 'lucide-svelte';
+    import { Map, Activity, Satellite, Globe, Home, FlaskConical} from 'lucide-svelte';
     import Contact from '$lib/components/Contact.svelte'
     
     let projects = [
@@ -34,6 +34,14 @@
             tags: ['Conservation', 'Volunteer Work', 'Collaborative GIS'],
             category: 'Community Engagement',
             link: "https://arcg.is/1iH5an" 
+        },
+        {
+        icon: FlaskConical,
+        title: 'SWAT+ Soil Analysis Pipeline',
+        description: "Developing and calibrating a SWAT+ model to assess soil-health and hydrologic responses across the Awapoko catchment in Northland NZ. While still underway this project involves significant GIS data preparation, hydrological modeling, and spatial analysis to support environmental research.",
+        tags: ['SWAT+', 'Soil Analysis', 'Hydrology', 'Modeling'],
+        category: 'Regional Analysis',
+        link: 'https://swat.tamu.edu/software/plus/'
         }
     ];
 

@@ -16,7 +16,7 @@
             description:
                 "Photogrammetry modeling of slip sites in Le Roys Bush",
             type: "3d model",
-            thumbnail: "/slipModel_thumb.jpg",
+            thumbnail: "/slipModel_thumb.jppm g",
             date: "2024-10",
             // External link to Sketchfab, GitHub, or dedicated project page
             externalUrl:
