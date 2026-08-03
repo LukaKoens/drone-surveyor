@@ -89,7 +89,7 @@
                             Focused on exploring practical applications in image processing as well as developing the piplines to leverage computer vision models on data. 
                             I've explored developing models on my own drone imagery, but lack the quantity of data to really pursue any specifc projects.
                             I have had success in developing models to explore what can be leveraged from the 0.075m LINZ imagery.
-                            Both of these projects have revloved around the detection of weeds in imagery.
+                            Both of these projects have revolved around the detection of weeds in imagery.
                         </p>
                         <div class="work-tech">
                             <span class="tech-tag">Research & Development</span>

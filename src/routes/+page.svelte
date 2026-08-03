@@ -1,5 +1,5 @@
 <script>
-    import { Drone, Map, Eye, Mail, Phone, MapPin, Linkedin, Github } from 'lucide-svelte';
+    import { Drone, Map, Eye, Camera, Mail, Phone, MapPin, Linkedin, Github } from 'lucide-svelte';
     import Contact from '$lib/components/Contact.svelte'
  
     
@@ -9,6 +9,12 @@
             title: 'Drone Data Collection & Communication',
             description: 'UAV aerial mapping, surveying, and data collection with CAA compliant flight planning and execution.',
             link: '/UAV'
+        },
+        {
+            icon: Camera,
+            title: 'Photography - WIP',
+            description: 'Landscape, aerial, wildlife, and macro photography, bringing the same eye for composition and terrain to work behind the lens.',
+            link: '/Photography'
         },
         {
             icon: Map,
@@ -21,7 +27,8 @@
             title: 'Computer Vison & LLM development',
             description: "AI implementation and development services focused on computer vision and language models, helping you choose the right tools for your specific needs.",
             link: '/AI'
-        }
+        },
+
     ]
 </script>
 
@@ -185,7 +192,7 @@
 
     .nav-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
         margin-top: 3rem;
     }
@@ -202,6 +209,8 @@
         position: relative;
         overflow: hidden;
         cursor: pointer;
+        display: flex;
+        flex-direction: column;
     }
 
     .nav-tile::before {

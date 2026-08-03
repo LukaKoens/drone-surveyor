@@ -7,7 +7,7 @@
             id: 1,
             name: "Le Roys Bush Wet Land",
             description:
-                "Mapping of the main wetland area in Le Roys Bush Reserve.",
+                "Mapping of the main wetland area in Le Roys Bush Reserve. This was one of the first projects I did with a drone, and was a good learning experience.",
             coordinates: [174.7363582, -36.8145912],
             zoom: 18,
             date: "2024-11",
@@ -20,39 +20,38 @@
         },
         {
             id: 2,
-            name: "Tuff Crater",
+            name: "Eric Armishaw Mangorves",
             description:
-                "An extended project to map out tuff crater, was a good learning experince in mapping out larger more complex regions",
-            coordinates: [174.753795, -36.801929],
+                "This site was a trial for using custom generated orthomosaic flights from QGIS & python tooling to get enterpise functionality from a consumer DJI drone, ",
+            coordinates: [174.6974684511263,  -36.87022908889173],
             zoom: 17,
-            date: "2024-12",
+            date: "2026-08",
             active: false,
-            tileUrl: "/tiles/tuff_crater_tiles/{z}/{x}/{-y}.png",
+            tileUrl: "/tiles/eric_armishaw_tiles/{z}/{x}/{-y}.png",
             extent: [
-                174.7506067385581616, -36.8046882561862887,
-                174.7573549964118627, -36.7991509912179566,
+                174.69423043726511, -36.87151716923736,
+                174.70017533371382, -36.86840001779635,
             ],
         },
         {
             id: 3,
-            name: "Onepoto domain",
+            name: "Te Tātua-a-Riukiuta ",
             description:
-                "Mapping on Onepoto domain showcasing the pampass grass that is otherwise difficult to see in the established grassland",
-            coordinates: [174.7523118, -36.8075986],
-            zoom: 19,
-            date: "2024-11",
+                "Done for Tūpuna Maunga Authority, this flight was done to document the progress of the restoration of the volcanic cone after a community planting day, and to provide a base for future monitoring of the site.",
+            coordinates: [174.7555783780291, -36.901093553291346,],
+            date: "2026-05",
             active: false,
-            tileUrl: "/tiles/onepoto_tiles/{z}/{x}/{-y}.png",
+            tileUrl: "/tiles/te_tātua_tiles/{z}/{x}/{-y}.png",
             extent: [
-                174.7512495885832209, -36.8085739793310225,
-                174.7532463838352612, -36.8067508119465501,
-            ],
+                174.75412034614288, -36.90215851012748,
+                174.75666753857666, -36.89980750695866,
+            ], // Adjust these coordinates
         },
         {
             id: 4,
             name: "Waiarohia Planting Site",
             description:
-                "Done on behalf of UWEN, this documents the progress done on restoring a section of wetland within the upper waitemata catchment, this flight needed a lot of planning due to the proximity to whenuapai airbase",
+                "Done on behalf of UWEN, this documents the progress done on restoring a section of wetland within the upper waitemata catchment, this flight needed a lot of planning due to the proximity to whenuapai airbase to ensure that it remained sheilded",
             coordinates: [174.6320712, -36.7997813],
             zoom: 20,
             date: "2025-07",
@@ -63,20 +62,7 @@
                 174.6326035291993719, -36.7994650129530712,
             ], // Adjust these coordinates
         },
-        {
-            id: 5,
-            name: "Chelsea Heritage Park Refuse Site",
-            description:
-                "A follow up to a extensive weeding effort by the CHERPA to tackle moth plant, this flight aimed to try and identify any that they had missed, this is likely at the limit of whats fesiable with this type of imagery, but is still a good photo point for future conservation efforts.",
-            coordinates: [174.720867, -36.8183132],
-            date: "2025-07",
-            active: false,
-            tileUrl: "/tiles/chp_refuse_tiles/{z}/{x}/{-y}.png",
-            extent: [
-                174.7201107381571887, -36.8189516293703818,
-                174.7215373592291598, -36.8177884878194916,
-            ], // Adjust these coordinates
-        },
+
     ];
 
     /**

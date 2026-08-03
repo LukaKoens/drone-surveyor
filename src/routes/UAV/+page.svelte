@@ -24,19 +24,19 @@
             // Alternative: internal page
             // externalUrl: "/projects/slip-modeling"
         },
-        {
-            id: 2,
-            title: "WIP - Temporal Site Tracking.",
-            description:
-                "I'm currently working on a number of different projects for local volunteer groups, building a collection of visits to various weeding sites as they've been, linked is story map discussing some of my work in this space.",
-            type: "orthomosaic",
-            thumbnail: "/temporalTracking_thumb.JPG",
-            date: "2024-06 -> Present",
-            // External link to research paper, data portal, or project documentation
-            externalUrl: "https://arcg.is/1iH5an",
-            // Alternative: internal page
-            // externalUrl: "/projects/mangrove-encroachment"
-        },
+        // {
+        //     id: 2,
+        //     title: "WIP - Temporal Site Tracking.",
+        //     description:
+        //         "I started working with Drones forprojects for local volunteer groups, building a collection of visits to various weeding sites as they've been, linked is story map discussing some of my work in this space.",
+        //     type: "orthomosaic",
+        //     thumbnail: "/temporalTracking_thumb.JPG",
+        //     date: "2024-06",
+        //     // External link to research paper, data portal, or project documentation
+        //     externalUrl: "https://arcg.is/1iH5an",
+        //     // Alternative: internal page
+        //     // externalUrl: "/projects/mangrove-encroachment"
+        // },
 
     ];
 </script>
@@ -74,7 +74,7 @@
 <section class="map-section">
     <h2>Interactive Map</h2>
     <p class="section-subtitle"> 
-        Explore orthomosaics from a number of the sites I've documented and compiled for web viewing
+        Explore orthomosaics from a number of the sites I've documented and compiled for web viewing, further examples of my work can be found on OpenAerialMaps.
     </p>
     <Map></Map>
 </section>
@@ -119,18 +119,17 @@
     <div class="container">
         <h2>Methodologies & Goals</h2>
         <p class="section-subtitle">
-            Currently I do not have high tech equipment, with all the imagery captured using just a DJI mini 2 se, a very accessible budget drone.<br><br>
-            A large part of my work revolves around exploring how this tech can be leveraged by community volunteer groups, to enable and empower them to perform similar data collection using accessible equipment and software.
+            Imagery has been captured using a DJI Mini 2 SE initaly, and later with w DJI Mavic 3, with the goal of exploring how consumer drones can be used to capture high quality imagery for analysis and monitoring of sites of interest.<br><br>
+            The Mavic has allowed for some more advanced flight planning and execution, with the ability to capture higher quality imagery and more complex flight paths leveraging QGIS and python tooling to generate flight plans and execute them without having to fly them manually, working around the limitations of the DJI flyapp.
         </p>
 
         <div class="method-content">
             <div class="method-block">
                 <h3>Methodologies</h3>
                 <ul>
-                    <li>Low-altitude orthomosaic imaging using consumer UAVs and manual flights</li>
+                    <li>Low-altitude orthomosaic imaging using consumer UAVs, with manual or uploaded flight plans</li>
                     <li>Image processing with OpenDroneMap & QGIS</li>
                     <li>Tile-based hosting for fast web visualization</li>
-                    <li>Regular monitoring to assess temporal change after volunteer work</li>
                 </ul>
             </div>
         </div>
