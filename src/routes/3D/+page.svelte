@@ -29,8 +29,8 @@ const models = [
   },
   {
     name: 'Māngere Pā site',
-    mtl: '/3dModels/pāsiteModel/P_Site_LowPoly.mtl',
-    obj: '/3dModels/pāsiteModel/P_Site_LowPoly.obj',
+    mtl: '/3dModels/pāsiteModel/Pa_Site_Cut.mtl',
+    obj: '/3dModels/pāsiteModel/Pa_Site_Cut.obj',
     // this model is probably much bigger/differently scaled — push the camera further out
     cameraPosition: { x: 20, y: 15, z: 20 },
     cameraTarget: { x: 0, y: 0, z: 0 },
