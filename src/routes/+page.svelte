@@ -45,36 +45,41 @@
 </svelte:head>
 
 <body>
-    <div class="hero">
-        <div class="hero-content">
-            <h1>Curriculum Vitae Luka Koens</h1>
-            <p>Geospatial Analysis, Drone Operation,<br> Computer Vision Development</p>
-        </div>
-        
-        <div class="scroll-indicator">
-            <div class="scroll-arrow"></div>
-        </div>
-    </div>
+    <!-- Single continuous background image, spans the whole page and scrolls normally with content -->
+    <div class="page-bg"></div>
 
-    <div class="navigation-section">
-        <div class="nav-container">
-            <h2 class="section-title">Explore My Portfolio</h2>
-            
-            <div class="nav-grid">
-                {#each tiles as tile}
-                    <a href={tile.link} class="nav-tile">
-                        <span class="tile-icon">
-                            <svelte:component this={tile.icon} size={48} />
-                        </span>
-                        <h3 class="tile-title">{tile.title}</h3>
-                        <p class="tile-description">{tile.description}</p>
-                    </a>
-                {/each}
+    <div class="page-content">
+        <div class="hero">
+            <div class="hero-content">
+                <h1>Curriculum Vitae Luka Koens</h1>
+                <p>Geospatial Analysis, Drone Operation,<br> Computer Vision Development</p>
+            </div>
+
+            <div class="scroll-indicator">
+                <div class="scroll-arrow"></div>
             </div>
         </div>
-    </div>
 
-    <Contact></Contact>
+        <div class="navigation-section">
+            <div class="nav-container">
+                <h2 class="section-title">Explore My Portfolio</h2>
+
+                <div class="nav-grid">
+                    {#each tiles as tile}
+                        <a href={tile.link} class="nav-tile">
+                            <span class="tile-icon">
+                                <svelte:component this={tile.icon} size={48} />
+                            </span>
+                            <h3 class="tile-title">{tile.title}</h3>
+                            <p class="tile-description">{tile.description}</p>
+                        </a>
+                    {/each}
+                </div>
+            </div>
+        </div>
+
+        <Contact></Contact>
+    </div>
 </body>
 
 <style>
@@ -89,15 +94,33 @@
         background: #0a0a0a;
         color: #ffffff;
         overflow-x: hidden;
+        position: relative;
+    }
+
+    /* One large background image covering the full scrollable page height.
+       It's part of normal document flow (not fixed), so it scrolls along
+       with the content instead of being pinned to the viewport. */
+    .page-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('/intro_bg.webp');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        z-index: 0;
+    }
+
+    .page-content {
+        position: relative;
+        z-index: 1;
     }
 
  /* Hero Section */
     .hero {
         height: 100vh;
-        background-image: url('/intro_bg.JPG');
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -173,7 +196,9 @@
     
     .navigation-section {
         padding: 5rem 2rem;
-        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+        /* Semi-transparent dark wash instead of an opaque gradient,
+           so the single background image reads through behind the tiles. */
+        background: linear-gradient(135deg, rgba(26, 26, 26, 0.75) 0%, rgba(45, 45, 45, 0.75) 100%);
         min-height: 100vh;
         display: flex;
         align-items: center;

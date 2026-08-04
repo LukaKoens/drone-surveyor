@@ -4,9 +4,9 @@
         <h2>Contact</h2>
 
         <div class="contact-card">
-            <p><strong>Name:</strong> Luka Koens</p>
+            <p><strong>Luka Koens</strong></p>
             <p><strong>Business Email:</strong> <a href="mailto:luka@dronesurveyor.co.nz">luka@dronesurveyor.co.nz</a></p>
-            <p><strong>Location:</strong> Auckland, New Zealand</p>
+            <p><strong>Auckland, New Zealand</strong></p>
             <!-- <p><strong>Availability:</strong>Happy to</p> -->
         </div>
     </div>
@@ -16,7 +16,6 @@
             /* === CONTACT SECTION === */
     .contact-section {
         padding: 4rem 0;
-        background: #0d0d0d;
     }
 
     .contact-section h2 {
@@ -24,10 +23,15 @@
         margin-bottom: 1rem;
         text-align: center;
         color: #ffffff;
+        text-shadow: 
+            0 2px 10px rgba(0, 0, 0, 0.8),
+            0 0 20px rgba(0, 0, 0, 0.6),
+            0 0 40px rgba(0, 0, 0, 0.4);
+        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
     }
 
     .contact-card {
-        background: rgba(255, 255, 255, 0.03);
+        background: rgba(0, 0, 0, 0.5);
         padding: 2rem;
         border-radius: 12px;
         max-width: 500px;
@@ -37,8 +41,13 @@
 
     .contact-card p {
         font-size: 0.95rem;
-        color: rgba(255, 255, 255, 0.85);
+        color: rgba(255, 255, 255, 1);
         margin-bottom: 0.75rem;
+        text-shadow: 
+            0 2px 10px rgba(0, 0, 0, 0.8),
+            0 0 20px rgba(0, 0, 0, 0.6),
+            0 0 40px rgba(0, 0, 0, 0.4);
+        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
     }
 
     .contact-card a {
