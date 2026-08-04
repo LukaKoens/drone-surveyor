@@ -6,9 +6,15 @@
     let tiles = [
         {
             icon: Drone,
-            title: 'Drone Data Collection & Communication',
+            title: 'Drone Data Collection',
             description: 'UAV aerial mapping, surveying, and data collection with CAA compliant flight planning and execution.',
             link: '/UAV'
+        },
+        {
+            icon: MapPin,
+            title: '3D Modelling & Visualization',
+            description: '3D modelling and visualization of terrain, structures, and landscapes using photogrammetry and 3D scanning techniques.',
+            link: '/3D'
         },
         {
             icon: Camera,
@@ -220,8 +226,6 @@
         left: -100%;
         width: 100%;
         height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-        transition: left 0.5s;
     }
 
     .nav-tile:hover::before {

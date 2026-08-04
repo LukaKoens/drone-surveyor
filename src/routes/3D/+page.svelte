@@ -1,8 +1,9 @@
 <script>
-    import {
-        ArrowLeft,
-    } from "lucide-svelte";
-
+  import {
+      Home,
+      Maximize,
+  } from "lucide-svelte";
+  
   import { onMount } from 'svelte';
   // @ts-ignore
   import * as THREE from 'three';
@@ -21,13 +22,6 @@
   // Define all the models you want to switch between here
 const models = [
   {
-    name: 'LeRoys Bush Waterfall Slips',
-    mtl: '/3dModels/slipModel/LeRoysBush_Waterfall_Slips_2.mtl',
-    obj: '/3dModels/slipModel/LeRoysBush_Waterfall_Slips_2.obj',
-    cameraPosition: { x: 3, y: 3, z: 5 },
-    cameraTarget: { x: 0, y: 0, z: 0 },
-  },
-  {
     name: 'Māngere Pā site',
     mtl: '/3dModels/pāsiteModel/Pa_Site_Cut.mtl',
     obj: '/3dModels/pāsiteModel/Pa_Site_Cut.obj',
@@ -35,13 +29,13 @@ const models = [
     cameraPosition: { x: 20, y: 15, z: 20 },
     cameraTarget: { x: 0, y: 0, z: 0 },
   },
-
-    // Add more models like this:
-    // {
-    //   name: 'Another Site',
-    //   mtl: '/slipModel/AnotherSite.mtl',
-    //   obj: '/slipModel/AnotherSite.obj',
-    // },
+  {
+    name: 'LeRoys Bush Waterfall Slips',
+    mtl: '/3dModels/slipModel/LeRoysBush_Waterfall_Slips_2.mtl',
+    obj: '/3dModels/slipModel/LeRoysBush_Waterfall_Slips_2.obj',
+    cameraPosition: { x: 3, y: 3, z: 5 },
+    cameraTarget: { x: 0, y: 0, z: 0 },
+  }
   ];
 
   let activeModelIndex = 0;
@@ -198,8 +192,14 @@ const models = [
       </div>
     {/if}
 
-    <a class="home-btn" href="/UAV"><ArrowLeft></ArrowLeft></a>
-
+        <a
+        href="/"
+        rel="external"
+        class="home-btn"
+        title="Return Home"
+        >
+        <Home size={20} class="home-icon" />
+    </a>
     {#if models.length > 1}
       <div class="model-selector">
         {#each models as model, i}

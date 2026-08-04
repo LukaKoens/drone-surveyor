@@ -7,7 +7,7 @@
             <p><strong>Name:</strong> Luka Koens</p>
             <p><strong>Business Email:</strong> <a href="mailto:luka@dronesurveyor.co.nz">luka@dronesurveyor.co.nz</a></p>
             <p><strong>Location:</strong> Auckland, New Zealand</p>
-            <p><strong>Availability:</strong> Open to contracting, collaborative projects or otherwise happy to discuss</p>
+            <!-- <p><strong>Availability:</strong>Happy to</p> -->
         </div>
     </div>
 </section>

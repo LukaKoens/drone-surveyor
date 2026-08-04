@@ -1,5 +1,5 @@
 <script>
-    import Map from '$lib/components/Map.svelte'
+    import Map from '../../lib/components/Map.svelte'
     import Contact from '$lib/components/Contact.svelte'
 
     import {
@@ -7,38 +7,6 @@
         Maximize,
     } from "lucide-svelte";
 
-    // Location points data with tile layer references
-
-    let droneProjects = [
-        {
-            id: 1,
-            title: "Slip Modeling",
-            description:
-                "Photogrammetry modeling of slip sites in Le Roys Bush",
-            type: "3d model",
-            thumbnail: "/slipModel_thumb.jppm g",
-            date: "2024-10",
-            // External link to Sketchfab, GitHub, or dedicated project page
-            externalUrl:
-                "/3D",
-            // Alternative: internal page
-            // externalUrl: "/projects/slip-modeling"
-        },
-        // {
-        //     id: 2,
-        //     title: "WIP - Temporal Site Tracking.",
-        //     description:
-        //         "I started working with Drones forprojects for local volunteer groups, building a collection of visits to various weeding sites as they've been, linked is story map discussing some of my work in this space.",
-        //     type: "orthomosaic",
-        //     thumbnail: "/temporalTracking_thumb.JPG",
-        //     date: "2024-06",
-        //     // External link to research paper, data portal, or project documentation
-        //     externalUrl: "https://arcg.is/1iH5an",
-        //     // Alternative: internal page
-        //     // externalUrl: "/projects/mangrove-encroachment"
-        // },
-
-    ];
 </script>
 
 <svelte:head>
@@ -79,40 +47,6 @@
     <Map></Map>
 </section>
 
-<!--  Project Gallery with External Links -->
-<section class="gallery">
-    <div class="container">
-        <h2>Project Gallery</h2>
-        <p class="section-subtitle">
-            Browse through some drone analysis projects
-        </p>
-
-        <div class="project-grid">
-            {#each droneProjects as project}
-                <a class="project-card" href={project.externalUrl}>
-                    <div class="project-thumbnail">
-                        <img src={project.thumbnail} alt={project.title} />
-                        <div class="project-overlay">
-                            <div class="project-type">{project.type}</div>
-                            <div class="project-date">{project.date}</div>
-                            <!-- External link indicator -->
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>{project.title}</h3>
-                        <p>{project.description}</p>
-                        <div class="project-actions">
-                            <span class="view-project-text"
-                                >Click to view project</span
-                            >
-                        </div>
-                    </div>
-                </a>
-            {/each}
-        </div>
-    </div>
-</section>
-
 
 <!-- Methodologies & Goals Section -->
 <section class="methodologies-goals">
@@ -129,7 +63,6 @@
                 <ul>
                     <li>Low-altitude orthomosaic imaging using consumer UAVs, with manual or uploaded flight plans</li>
                     <li>Image processing with OpenDroneMap & QGIS</li>
-                    <li>Tile-based hosting for fast web visualization</li>
                 </ul>
             </div>
         </div>
