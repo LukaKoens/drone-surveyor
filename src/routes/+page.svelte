@@ -108,7 +108,7 @@
         height: 100%;
         background-image: url('/intro_bg.webp');
         background-size: cover;
-        background-position: center center;
+        background-position: center top;
         background-repeat: no-repeat;
         z-index: 0;
     }
@@ -198,7 +198,6 @@
         padding: 5rem 2rem;
         /* Semi-transparent dark wash instead of an opaque gradient,
            so the single background image reads through behind the tiles. */
-        background: linear-gradient(135deg, rgba(26, 26, 26, 0.75) 0%, rgba(45, 45, 45, 0.75) 100%);
         min-height: 100vh;
         display: flex;
         align-items: center;
@@ -215,10 +214,14 @@
         font-size: clamp(2rem, 5vw, 3rem);
         font-weight: 600;
         margin-bottom: 3rem;
-        background: linear-gradient(135deg, #667eea, #764ba2);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+        color: #ffffff;
+        letter-spacing: -0.02em;
+        line-height: 1.1;
+        text-shadow: 
+            0 2px 10px rgba(0, 0, 0, 0.8),
+            0 0 20px rgba(0, 0, 0, 0.6),
+            0 0 40px rgba(0, 0, 0, 0.4);
+        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
     }
 
     .nav-grid {
@@ -229,7 +232,7 @@
     }
 
     .nav-tile {
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+        background: linear-gradient(135deg, rgba(55, 55, 55, 0.5), rgba(55, 55, 55, 0.1));
         backdrop-filter: blur(10px);
         border-radius: 20px;
         padding: 2.5rem;
@@ -242,6 +245,11 @@
         cursor: pointer;
         display: flex;
         flex-direction: column;
+        text-shadow: 
+            0 2px 10px rgba(0, 0, 0, 0.5),
+            0 0 20px rgba(0, 0, 0, 0.2),
+            0 0 40px rgba(0, 0, 0, 0.1);
+        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
     }
 
     .nav-tile::before {

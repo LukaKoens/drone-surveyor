@@ -98,7 +98,7 @@
     /* === HERO SECTION === */
     .hero {
         height: 100vh;
-        background-image: url("/uav_bg.JPG");
+        background-image: url("/uav_bg.webp");
         background-size: cover;
         background-position: center;
         background-attachment: fixed;

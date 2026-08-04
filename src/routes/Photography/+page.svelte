@@ -120,7 +120,7 @@
     <title>Photography - Luka Koens</title>
     <meta
         name="description"
-        content="Landscape, aerial, wildlife, and macro photography by Luka Koens"
+        content="Drone Photography by Luka Koens"
     />
 </svelte:head>
 
@@ -132,7 +132,7 @@
 
     <div class="hero-content">
         <h1>Photography</h1>
-        <p>Landscape, aerial, wildlife, and macro work from behind the lens</p>
+        <!-- <p>Drone Photography</p> -->
     </div>
 
     <div class="scroll-indicator">
@@ -224,7 +224,7 @@
     </div>
 {/if}
 
-<!-- Approach Section -->
+<!-- Approach Section
 <section class="approach">
     <div class="container">
         <h2>Behind the Lens</h2>
@@ -254,7 +254,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 <Contact></Contact>
 
@@ -286,7 +286,7 @@
     /* === HERO SECTION === */
     .hero {
         height: 100vh;
-        background-image: url("/photography_bg.jpg");
+        background-image: url("/photography_bg.webp");
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
@@ -327,6 +327,7 @@
         text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7), 0 0 15px rgba(0, 0, 0, 0.5);
         filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
     }
+
 
     /* === NAVIGATION === */
     .home-btn {
